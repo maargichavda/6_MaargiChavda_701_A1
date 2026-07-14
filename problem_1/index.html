@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeJS AJAX Demo</title>
+</head>
+<body>
+
+    <h2>AJAX Example</h2>
+
+    <button onclick="showMessage()">Click Here</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function showMessage() {
+            fetch("/gethello")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("demo").innerHTML = data;
+                });
+        }
+    </script>
+
+</body>
+</html>
